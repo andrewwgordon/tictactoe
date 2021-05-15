@@ -8,7 +8,6 @@ EMPTY = " "
 TIE = "TIE"
 NUM_SQUARES = 9
 
-
 def display_instruct():
     """Display game instructions."""  
     print(
@@ -29,7 +28,6 @@ def display_instruct():
     """
     )
 
-
 def ask_yes_no(question):
     """Ask a yes or no question."""
     # Set the response to None
@@ -41,7 +39,6 @@ def ask_yes_no(question):
     # return the response
     return response
 
-
 def ask_number(question, low, high):
     """Ask for a number within a range."""
     # Set the response to None
@@ -52,7 +49,6 @@ def ask_number(question, low, high):
         response = int(input(question))
     # return the response
     return response
-
 
 def pieces():
     """Determine if player or computer goes first."""
@@ -74,7 +70,6 @@ def pieces():
     # return the computer and human player pieces
     return computer, human
 
-
 def new_board():
     """Create new game board."""
     # Set the board to an empty list
@@ -86,7 +81,6 @@ def new_board():
     # return the board
     return board
 
-
 def display_board(board):
     """Display game board on screen."""
     print("\n\t", board[0], "|", board[1], "|", board[2])
@@ -94,7 +88,6 @@ def display_board(board):
     print("\t", board[3], "|", board[4], "|", board[5])
     print("\t", "---------")
     print("\t", board[6], "|", board[7], "|", board[8], "\n")
-
 
 def legal_moves(board):
     """Create list of legal moves."""
@@ -108,7 +101,6 @@ def legal_moves(board):
             moves.append(square)
     # return the legal moves
     return moves
-
 
 def winner(board):
     """Determine the game winner."""
@@ -139,7 +131,6 @@ def winner(board):
     # Return None if there is either no Winner or Tie
     return None
 
-
 def human_move(board, human):
     """Get human move."""  
     # Get the possible legal moves
@@ -156,7 +147,6 @@ def human_move(board, human):
     print("Fine...")
     # Return the move
     return move
-
 
 def computer_move(board, computer, human):
     """Make computer move."""
@@ -202,7 +192,6 @@ def computer_move(board, computer, human):
             print(move)
             return move
 
-
 def next_turn(turn):
     """Switch turns."""
     # Swaps the turn over
@@ -210,7 +199,6 @@ def next_turn(turn):
         return O
     else:
         return X
-
     
 def congrat_winner(the_winner, computer, human):
     """Congratulate the winner."""
@@ -231,7 +219,6 @@ def congrat_winner(the_winner, computer, human):
         print("You were most lucky, human, and somehow managed to tie me.  \n" \
               "Celebrate today... for this is the best you will ever achieve.")
 
-
 def main():
     display_instruct()
     computer, human = pieces()
@@ -251,7 +238,6 @@ def main():
 
     the_winner = winner(board)
     congrat_winner(the_winner, computer, human)
-
 
 # start the program
 main()
